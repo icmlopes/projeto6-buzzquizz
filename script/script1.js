@@ -1,6 +1,6 @@
 let conteudo = document.querySelector('.conteudo');
 
-function telaInicial(){
+function telaInicial() {
     conteudo.innerHTML = `
     <div class="espacamento1"></div>
     <div class="feed" >
@@ -53,10 +53,10 @@ function telaInicial(){
     `
 }
 
-<!-- telaInicial(); -->
+    telaInicial();
 
-function criarQuiz(){
-    conteudo.innerHTML = `
+    function criarQuiz() {
+        conteudo.innerHTML = `
     <div class="espacamento1"></div>
     <div class="toda-pag">
         <h2>Comece pelo começo</h2>
@@ -75,9 +75,9 @@ function criarQuiz(){
         <button class="botao1">Prosseguir pra criar perguntas</button>
     </div>
     `
-}
+    }
 
-function criarPerguntas(){
+function criarPerguntas() {
     conteudo.innerHTML = `
     <div class="espacamento1"></div>
     <div class="toda-pag">
@@ -131,7 +131,7 @@ function criarPerguntas(){
     `
 }
 
-function criarNiveis(){
+function criarNiveis() {
     conteudo.innerHTML = `
     <div class="espacamento1"></div>
     <div class="toda-pag">
@@ -173,7 +173,7 @@ function criarNiveis(){
     `
 }
 
-function quizPronto(){
+function quizPronto() {
     conteudo.innerHTML = `
     <div class="espacamento1"></div>
     <div class="toda-pag">
@@ -196,6 +196,79 @@ function quizPronto(){
         <div class="voltar-home">Voltar para home</div>
 
     </div>
+    `
+}
+
+function jogarQuiz() {
+    conteudo.innerHTML = `
+    <div class="container-topo-quiz">
+            <div class="topo-quiz">
+                <div class="texto-quiz">
+                    <h4>O quão Potterhead você é?</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="espacamento5"></div>
+
+        <div class="toda-pag">
+            <div class="container-op-quiz">
+                <div class="containter-interno-op">
+                    <div class="pergunta-quiz">
+                        <h2>Em qual animal Olho-Tonto Moody transfigurou Malfoy?</h2>
+                    </div>
+                    <div class="espacamento1"></div>
+                    <div>
+                        <div class="img-quiz"></div>
+                        </br>
+                        <h5>Gatineo</h5>
+                    </div>
+                    <div>
+                        <div class="img-quiz"></div>
+                        </br>
+                        <h5>Gatineo</h5>
+                    </div>
+                    <div>
+                        <div class="img-quiz"></div>
+                        </br>
+                        <h5>Gatineo</h5>
+                    </div>
+                    <div>
+                        <div class="img-quiz"></div>
+                        </br>
+                        <h5>Gatineo</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="espacamento2"></div>
+
+            <div class="container-resultado">
+                <div class="containter-interno-result">
+                    <div class="resultado-quiz">
+                        <h2>88% de acerto: Você é praticamente um aluno Hogwarts!</h2>
+                    </div>
+                    <div class="espacamento4"></div>
+                    <div class="disposicao">
+                        <div class="img-resultado"></div>
+                        <div class="espacamento6"></div>
+                        <h5 class="quebrar-texto">Parabéns Potterhead! Bem-vindx a Hogwats, aproveite o loop infinito de
+                            comida e clique no
+                            botão abaixo para usar o vira-tempo e reiniciar este teste</h5>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="espacamento2"></div>
+
+            <button class="botao3">Reiniciar Quizz</button>
+
+            <div class="espacamento4"></div>
+
+            <div class="voltar-home">Voltar para home</div>
+
+        </div>
     `
 }
 
