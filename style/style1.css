@@ -135,14 +135,14 @@ ion-icon {
     left: 20px;
 }
 
-.ocultar {
-    display: none;
-}
 
 .seus-quizes {
     display: flex;
 }
 
+.ocultar {
+    display: none;
+}
 
 /* Aqui começa o css específico para criar o quizz */
 
