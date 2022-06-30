@@ -323,5 +323,9 @@ h3 {
         height: 46px;
 
     }
+
+    .quiz-site-img{
+        margin: 0 auto;
+    }
     
 }
