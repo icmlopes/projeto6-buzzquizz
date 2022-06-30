@@ -2,6 +2,7 @@ let conteudo = document.querySelector('.conteudo');
 
 function telaInicial(){
     conteudo.innerHTML = `
+    <div class="espacamento1"></div>
     <div class="feed" >
         <div class="inicio-feed">
             <div class="container-novo-quiz">
@@ -52,10 +53,11 @@ function telaInicial(){
     `
 }
 
-telaInicial();
+<!-- telaInicial(); -->
 
 function criarQuiz(){
     conteudo.innerHTML = `
+    <div class="espacamento1"></div>
     <div class="toda-pag">
         <h2>Comece pelo começo</h2>
 
@@ -77,6 +79,7 @@ function criarQuiz(){
 
 function criarPerguntas(){
     conteudo.innerHTML = `
+    <div class="espacamento1"></div>
     <div class="toda-pag">
         <h2>Crie suas perguntas</h2>
 
@@ -130,6 +133,7 @@ function criarPerguntas(){
 
 function criarNiveis(){
     conteudo.innerHTML = `
+    <div class="espacamento1"></div>
     <div class="toda-pag">
         <h2>Agora, decida os níveis</h2>
 
@@ -171,6 +175,7 @@ function criarNiveis(){
 
 function quizPronto(){
     conteudo.innerHTML = `
+    <div class="espacamento1"></div>
     <div class="toda-pag">
         <h2>Seu quizz está pronto!</h2>
 

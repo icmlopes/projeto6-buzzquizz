@@ -57,6 +57,7 @@ ion-icon {
     width: 10px;
 }
 
+
 .feed {
     align-items: center;
     justify-content: center;
@@ -296,6 +297,147 @@ h3 {
     color: #818181;
 }
 
+/* CSS DO TELA 2 - JOGO DO QUIZ */
+
+.container-topo-quiz{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.topo-quiz{
+    background-image: url("../img/Capa-quizz/hogwarts.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 227px;
+    position: relative;
+    object-fit: cover;
+}
+
+.texto-quiz{
+    background: linear-gradient(transparent, 30%, black);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+h4{
+    color: #FFFFFF;
+    font-size: 39px;
+    font-weight: 400;
+    margin-top: 80px;
+}
+
+.espacamento5{
+    height: 69px;
+}
+
+.container-op-quiz{
+    display: flex;
+    width: 759px;
+    height: 676px;
+    background-color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.containter-interno-op{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.pergunta-quiz{
+    width: 100%;
+    height: 138px;
+    background-color: #434CA0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    color: #FFFFFF;
+}
+
+.img-quiz{
+    width: 330px;
+    height: 176px;
+    background-image: url('../img/quizz/harry.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h5{
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+}
+
+.errado{
+    opacity: 0.5;
+    color: #FF4B4B;
+}
+
+.correto{
+    color: #009C22;
+}
+
+/* CSS resultado quizz */
+
+.container-resultado{
+    display: flex;
+    width: 759px;
+    height: 430px;
+    background-color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.containter-interno-result{
+    width: 90%;
+    height: 90%;
+}
+
+.resultado-quiz{
+    width: 100%;
+    height: 99px;
+    background-color: #EC362D;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    color: #FFFFFF;
+}
+
+.img-resultado{
+    width: 364px;
+    height: 273px;
+    background-image: url('../img/quizz/dumbledor.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.disposicao{
+    display: flex;
+}
+
+.quebrar-texto{
+    word-wrap: break-word;
+    width: 328px;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.espacamento6{
+    width: 20px;
+}
+
 @media (max-width: 1100px) {
     .feed {
         flex-direction: column;
@@ -327,5 +469,59 @@ h3 {
     .quiz-site-img{
         margin: 0 auto;
     }
+
+    .topo-quiz{
+        height: 142px;
+    }
+
+    h4{
+        font-size: 23px;
+        margin-top: 60px;
+    }
+
+    .container-op-quiz{
+        width: 100%;
+        height: 436px;
+    }
+
+    .pergunta-quiz{
+        height: 89px;
+    }
     
+    .img-quiz{
+        width: 163px;
+        height: 113px;
+        background-color: green;
+    }
+
+    h5{
+        font-size: 13px;
+    }
+
+    .container-resultado{
+        width: 100%;
+        height: 500px;
+    }
+
+    .img-resultado{
+        width: 100%;
+        height: 255px;
+        margin-bottom: 20px;
+    }
+
+    .disposicao{
+        flex-direction: column;
+    }
+
+    .quebrar-texto{
+        word-wrap: break-word;
+        width: 328px;
+        font-size: 17px;
+        text-align: justify;
+    }
+
+    h2{
+        font-size: 19px;
+    }
+
 }
