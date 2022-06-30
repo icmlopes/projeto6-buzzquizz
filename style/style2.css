@@ -179,11 +179,7 @@
 
 /* Responsividade Tela 2 */
 
-@media (max-width: 1100px) {
-
-    .topo{
-        width: 100vw;
-    }
+/* @media (max-width: 1100px) {
    
     .titulo-quiz, .titulo-quiz .imagem{
         width: 100vw;
@@ -205,7 +201,5 @@
     .titulo-pergunta{
       flex-basis: 90%;
     }
-
-
         
-}
+} */
