@@ -53,10 +53,10 @@ function telaInicial() {
     `
 }
 
-    telaInicial();
+criarPerguntas();
 
-    function criarQuiz() {
-        conteudo.innerHTML = `
+function criarQuiz() {
+    conteudo.innerHTML = `
     <div class="espacamento1"></div>
     <div class="toda-pag">
         <h2>Comece pelo começo</h2>
@@ -64,18 +64,26 @@ function telaInicial() {
         <div class="espacamento4"></div>  
 
         <div class="container-criar-quiz tamanho">
-            <input type="text" placeholder="  Título do seu quizz" >
-            <input type="url" placeholder="  URL da imagem do seu quizz" >
-            <input type="number" placeholder="  Número de perguntas do quizz" >
-            <input type="number" placeholder="  Quantidade de níveis do quizz" >
+            <div>
+                <input type="text" class="in-text" placeholder="  Título do seu quizz" >
+            </div>
+            <div>
+                <input type="url" class="in-url" placeholder="  URL da imagem do seu quizz" >
+            </div> 
+            <div>
+                <input type="number" class="in-numP" placeholder="  Número de perguntas do quizz" >
+            </div>
+            <div>
+                <input type="number" class="in-numQ" placeholder="  Quantidade de níveis do quizz" >
+            </div>            
         </div>
 
         <div class="espacamento1"></div>
 
-        <button onclick="criarPerguntas()"class="botao1">Prosseguir pra criar perguntas</button>
+        <button onclick="validacaoQuiz()"class="botao1">Prosseguir pra criar perguntas</button>
     </div>
     `
-    }
+}
 
 function criarPerguntas() {
     conteudo.innerHTML = `
@@ -87,15 +95,15 @@ function criarPerguntas() {
 
         <div class="container-criar-perguntas tamanho">
             <h3>Pergunta1</h3>
-            <input type="text" placeholder="  Texto da pergunta">
+            <input type="text" class="in-text2"placeholder="  Texto da pergunta">
             <input type="color" placeholder="  Cor de fundo da pergunta">
             </br>
             <h3>Resposta correta</h3>
-            <input type="text" placeholder="  Resposta correta" >
+            <input type="text" class="in-resp-correta" placeholder="  Resposta correta" >
             <input type="url" placeholder="  URL da imagem" >
             </br>
             <h3>Respostas incorretas</h3>
-            <input type="text" placeholder="  Resposta incorreta 1" >
+            <input type="text" class="in-resp-incorreta" placeholder="  Resposta incorreta 1" >
             <input type="url" placeholder="  URL da imagem 1" >
             </br>
             <input type="text" placeholder="  Resposta incorreta 2" >
@@ -126,7 +134,7 @@ function criarPerguntas() {
 
         <div class="espacamento2"></div>
 
-        <button class="botao1" onclick="criarNiveis()">Prosseguir pra criar níveis</button>
+        <button class="botao1" onclick="validacaoPerguntas()">Prosseguir pra criar níveis</button>
     </div>
     `
 }
@@ -272,3 +280,52 @@ function jogarQuiz() {
     `
 }
 
+
+function validacaoQuiz() {
+    let inText = document.querySelector('.in-text').value;
+    if (inText.length < 20 || inText.length >= 65) {
+        alert("O título deve ter no mínimo 20 e máximo de 65 caracteres! :(")
+    }
+
+    /* let inUrl = document.querySelector('.in-url').value;
+    if () {
+
+    } */
+
+    let inNumP = document.querySelector('.in-numP').value;
+    if (inNumP < 3) {
+        alert("O número mínimo de fases são 3! :(")
+    }
+
+    let inNumQ = document.querySelector('.in-numQ').value;
+    console.log(inNumQ);
+    if (inNumQ < 2) {
+        alert("O número mínimo de níveis são 2! :(")
+    }
+
+    /* let validarCriacao = document.querySelector('.container-criar-quiz');
+    for(let i = 0; i ){
+        conteudo.innerHTML += `
+        <button onclick="criarPerguntas()"class="botao1">Prosseguir pra criar perguntas</button>
+        `
+    } */
+}
+
+function validacaoPerguntas() {
+    let inText2 = document.querySelector('.in-text2').value;
+    if (inText2.length < 20) {
+        alert("A pergunta deve ter no mínimo 20 caracteres! :(")
+    }
+
+    let inRespCorreta = document.querySelector('.in-resp-correta').value;
+    console.log(inRespCorreta);
+    if (inRespCorreta.length !== null){
+        alert("Esse campo deve conter a resposta correta!! =D");
+    }
+
+    let inRespIncorreta = document.querySelector('.in-resp-incorreta').value;
+    console.log(inRespIncorreta);
+    if (inRespIncorreta.length !== null){
+        alert("Esse campo deve conter a resposta incorreta!! =D");
+    }
+}
