@@ -11,6 +11,7 @@ button {
     border: 1px dashed #EC362D;
     border-radius: 50px;
     background-color: #FAFAFA;
+    cursor: pointer;
 }
 
 h1 {
@@ -27,6 +28,7 @@ img {
 ion-icon {
     font-size: 20px;
     color: #EC362D;
+    cursor: pointer;
 }
 
 .topo {
@@ -295,6 +297,7 @@ h3 {
     font-size: 21px;
     font-weight: 400;
     color: #818181;
+    cursor: pointer;
 }
 
 /* CSS DO TELA 2 - JOGO DO QUIZ */
@@ -318,6 +321,7 @@ h3 {
 
 .texto-quiz{
     background: linear-gradient(transparent, 30%, black);
+    /* opacity: 0.6; */
     width: 100%;
     height: 100%;
     position: absolute;

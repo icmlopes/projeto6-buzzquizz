@@ -14,7 +14,7 @@ function telaInicial() {
                 </div>
                 </br>
                 </br>
-                <button>Criar Quizz</button>
+                <button onclick="criarQuiz()">Criar Quizz</button>
             </div >
         </div >
 
@@ -72,7 +72,7 @@ function telaInicial() {
 
         <div class="espacamento1"></div>
 
-        <button class="botao1">Prosseguir pra criar perguntas</button>
+        <button onclick="criarPerguntas()"class="botao1">Prosseguir pra criar perguntas</button>
     </div>
     `
     }
@@ -126,7 +126,7 @@ function criarPerguntas() {
 
         <div class="espacamento2"></div>
 
-        <button class="botao1">Prosseguir pra criar níveis</button>
+        <button class="botao1" onclick="criarNiveis()">Prosseguir pra criar níveis</button>
     </div>
     `
 }
@@ -167,7 +167,7 @@ function criarNiveis() {
 
         <div class="espacamento2"></div>
 
-        <button class="botao1">Finalizar Quizz</button>
+        <button class="botao1" onclick="quizPronto()">Finalizar Quizz</button>
     
     </div>
     `
@@ -189,11 +189,11 @@ function quizPronto() {
 
         <div class="espacamento2"></div>
 
-        <button class="botao2">Acessar Quizz</button>
+        <button class="botao2" onclick="jogarQuiz()">Acessar Quizz</button>
 
         <div class="espacamento4"></div>
 
-        <div class="voltar-home">Voltar para home</div>
+        <div class="voltar-home" onclick="telaInicial()">Voltar para home</div>
 
     </div>
     `
@@ -262,11 +262,11 @@ function jogarQuiz() {
 
             <div class="espacamento2"></div>
 
-            <button class="botao3">Reiniciar Quizz</button>
+            <button class="botao3" onclick="jogarQuiz()">Reiniciar Quizz</button>
 
             <div class="espacamento4"></div>
 
-            <div class="voltar-home">Voltar para home</div>
+            <div class="voltar-home" onclick="telaInicial()">Voltar para home</div>
 
         </div>
     `
