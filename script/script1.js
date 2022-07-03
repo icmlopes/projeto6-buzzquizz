@@ -139,14 +139,14 @@ function criarPerguntas(numPerguntas) {
                     <input type="url" placeholder="  URL da imagem" >
                 </br>
                 <h3>Respostas incorretas</h3>
-                    <input type="text" placeholder="  Resposta incorreta 1" >
-                    <input type="url" placeholder="  URL da imagem 1" >
+                    <input type="text" placeholder="  Resposta incorreta ${i + 1}" >
+                    <input type="url" placeholder="  URL da imagem ${i + 1}" >
                 </br>
-                    <input type="text" placeholder="  Resposta incorreta 2" >
-                    <input type="url" placeholder="  URL da imagem 2" >
+                    <input type="text" placeholder="  Resposta incorreta ${i + 1}" >
+                    <input type="url" placeholder="  URL da imagem ${i + 1}" >
                 </br>
-                    <input type="text" placeholder="  Resposta incorreta 3" >
-                    <input type="url" placeholder="  URL da imagem 3" >
+                    <input type="text" placeholder="  Resposta incorreta ${i + 1}" >
+                    <input type="url" placeholder="  URL da imagem ${i + 1}" >
                 </br>
             </div> `
 
@@ -162,7 +162,7 @@ function criarNiveis(numNiveis) {
         <form action="#" onsubmit="enviarFormCriarNiveis">
             <div class = "container-niveis"></div>
 
-             <button class="botao1" onclick="quizPronto()">Finalizar Quizz</button>
+            <button class="botao1" type="submit"">Finalizar Quizz</button>
         </form>
     </div>
     `
@@ -179,20 +179,16 @@ function criarNiveis(numNiveis) {
                 <input type="text" minLength="30" placeholder="  Descrição do nível" >
             </div>
 
-            <div class="espacamento2"></div>
-
             <div class="container-pergunta-fechada">
                 <div class="container-pergunta-fechada-bloco">
-                    <h3>Nível 2</h3>
+                    <h3>Nível ${i + 1}</h3>
                     <ion-icon name="create-outline" class="conf-ion"></ion-icon>
                 </div>
             </div>
-
-            <div class="espacamento2"></div>
         
             <div class="container-pergunta-fechada">
                 <div class="container-pergunta-fechada-bloco">
-                    <h3>Nível 3</h3>
+                    <h3>Nível ${i + 1}</h3>
                     <ion-icon name="create-outline" class="conf-ion"></ion-icon>
                 </div>
             </div>
@@ -299,56 +295,6 @@ function jogarQuiz() {
     `
 }
 
-
-/* function validacaoQuiz() {
-    let inText = document.querySelector('.in-text').value;
-    if (inText.length < 20 || inText.length >= 65) {
-        alert("O título deve ter no mínimo 20 e máximo de 65 caracteres! :(")
-    } */
-
-/* let inUrl = document.querySelector('.in-url').value;
-if () {
-
-} */
-
-/* let inNumP = document.querySelector('.in-numP').value;
-if (inNumP < 3) {
-    alert("O número mínimo de fases são 3! :(")
-}
-
-let inNumQ = document.querySelector('.in-numQ').value;
-console.log(inNumQ);
-if (inNumQ < 2) {
-    alert("O número mínimo de níveis são 2! :(")
-} */
-
-/* let validarCriacao = document.querySelector('.container-criar-quiz');
-for(let i = 0; i ){
-    conteudo.innerHTML += `
-    <button onclick="criarPerguntas()"class="botao1">Prosseguir pra criar perguntas</button>
-    `
-} */
-//}
-
-/* function validacaoPerguntas() {
-    let inText2 = document.querySelector('.in-text2').value;
-    if (inText2.length < 20) {
-        alert("A pergunta deve ter no mínimo 20 caracteres! :(")
-    }
-
-    let inRespCorreta = document.querySelector('.in-resp-correta').value;
-    console.log(inRespCorreta);
-    if (inRespCorreta.length !== null){
-        alert("Esse campo deve conter a resposta correta!! =D");
-    }
-
-    let inRespIncorreta = document.querySelector('.in-resp-incorreta').value;
-    console.log(inRespIncorreta);
-    if (inRespIncorreta.length !== null){
-        alert("Esse campo deve conter a resposta incorreta!! =D");
-    }
-} */
-
 function pegarQuizzesAPI() {
     let promessa = axios.get('https://mock-api.driven.com.br/api/v7/buzzquizz/quizzes');
     promessa.then(exibirQuizzes);
@@ -367,7 +313,7 @@ function exibirQuizzes(resposta) {
     for (let i = 0; i < quizzes.length; i++) {
         mostrarQuizzes.innerHTML += `
             <div class = "exibir-quiz">
-                <div class="" style="background-image: url(${quizzes[i].image});height: 200px;background-size:cover;background-repeat:no-repeat;">
+                <div class="estilo-quiz" style:"background-image: url(${quizzes[i].image})";>
 
                     ${quizzes[i].title}
                 </div>
@@ -388,7 +334,7 @@ function enviarFormCriarQuizz() {
 function enviarFormCriarNiveis() {
     numNiveis = document.querySelector('.input-niveis').value;
 
-    criarNiveis(numNiveis)
+    criarNiveis(numNiveis);
 }
 
 function enviarFormCriarPerguntas() {

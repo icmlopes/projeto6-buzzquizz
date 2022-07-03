@@ -1,4 +1,4 @@
-#{
+*{
     box-sizing: border-box;
 }
 
@@ -160,6 +160,13 @@ ion-icon {
     padding: 12px;
 }
 
+.estilo-quiz{
+    height: 200px;
+    background-size:cover;
+    background-repeat:no-repeat;
+}
+
+
 /* Aqui começa o css específico para criar o quizz */
 
 h2 {
@@ -295,6 +302,7 @@ h3 {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 /* 4ª parte do criar quizz - QUIZZ PRONTO */
