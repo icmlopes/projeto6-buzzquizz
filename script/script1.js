@@ -52,6 +52,7 @@ function telaInicial() {
 
     </div >
     `
+    pegarQuizzesAPI()
 }
 
 telaInicial();
@@ -64,16 +65,16 @@ function criarQuiz() {
         <form class="form" onsubmit="enviarFormCriarQuizz()">
             <div class="container-criar-quiz tamanho">
                 <div>
-                    <input type="text" minLength="5" maxLength="65" placeholder="  Título do seu quizz" >
+                    <input type="text" minLength="5" maxLength="65" placeholder="  Título do seu quizz" required>
                 </div>
                 <div>
-                    <input type="text" placeholder="  URL da imagem do seu quizz" >
+                    <input type="text" placeholder="  URL da imagem do seu quizz" required>
                 </div> 
                 <div>
-                    <input type="number" class="input-perguntas" min="3" placeholder="  Número de perguntas do quizz" >
+                    <input type="number" class="input-perguntas" min="3" placeholder="  Número de perguntas do quizz" required>
                 </div>
                 <div>
-                    <input type="number" min="2" class="input-niveis" placeholder="  Quantidade de níveis do quizz" >
+                    <input type="number" class="input-niveis" min="2" placeholder="  Quantidade de níveis do quizz" required>
                 </div>  
             </div>  
 
@@ -104,10 +105,41 @@ function criarPerguntas(numPerguntas) {
             <div class="novo-container-cp"> 
                 <div class="p-fechada">
                     <h3>Pergunta ${i + 1}</h3>  
-                    <ion-icon name="create-outline" class="conf-ion"></ion-icon>
+                    <ion-icon " name="create-outline" class="conf-ion"></ion-icon>
                 </div>
+
                 <div class="container-criar-perguntas tamanho">
-                        <input type="text" minLength="20" placeholder="  Texto da pergunta">
+                        <input type="text" minLength="20" placeholder="  Texto da pergunta" required>
+                        <input type="color" placeholder="  Cor de fundo da pergunta" required>
+                    </br>
+                    <h3>Resposta correta</h3>
+                        <input type="text" placeholder="  Resposta correta" required>
+                        <input type="url" placeholder="  URL da imagem" required>
+                    </br>
+                    <h3>Respostas incorretas</h3>
+                        <input type="text" placeholder="  Resposta incorreta ${i + 1}" required>
+                        <input type="url" placeholder="  URL da imagem ${i + 1}" required>
+                    </br>
+                        <input type="text" placeholder="  Resposta incorreta ${i + 1}" required>
+                        <input type="url" placeholder="  URL da imagem ${i + 1}" required>
+                    </br>
+                        <input type="text" placeholder="  Resposta incorreta ${i + 1}" required>
+                        <input type="url" placeholder="  URL da imagem ${i + 1}" required>
+                    </br>
+                </div>
+            </div>
+            `
+        } else {
+            containerPerguntas.innerHTML += `
+            <div class="novo-container-cp">
+
+                <div class="p-fechada">
+                        <h3>Pergunta ${i + 1}</h3>  
+                        <ion-icon name="create-outline" class="conf-ion"></ion-icon>
+                </div>
+                <div class="container-criar-perguntas tamanho">    
+                    <h3>Pergunta ${i + 1}</h3>
+                        <input type="text" "placeholder="  Texto da pergunta">
                         <input type="color" placeholder="  Cor de fundo da pergunta">
                     </br>
                     <h3>Resposta correta</h3>
@@ -125,36 +157,14 @@ function criarPerguntas(numPerguntas) {
                         <input type="url" placeholder="  URL da imagem ${i + 1}" >
                     </br>
                 </div>
-            </div>
-            `
-        } else {
-            containerPerguntas.innerHTML += `
-            <div class="container-criar-perguntas tamanho">
-                <h3>Pergunta ${i + 1}</h3>
-                    <input type="text" "placeholder="  Texto da pergunta">
-                    <input type="color" placeholder="  Cor de fundo da pergunta">
-                </br>
-                <h3>Resposta correta</h3>
-                    <input type="text" placeholder="  Resposta correta" >
-                    <input type="url" placeholder="  URL da imagem" >
-                </br>
-                <h3>Respostas incorretas</h3>
-                    <input type="text" placeholder="  Resposta incorreta ${i + 1}" >
-                    <input type="url" placeholder="  URL da imagem ${i + 1}" >
-                </br>
-                    <input type="text" placeholder="  Resposta incorreta ${i + 1}" >
-                    <input type="url" placeholder="  URL da imagem ${i + 1}" >
-                </br>
-                    <input type="text" placeholder="  Resposta incorreta ${i + 1}" >
-                    <input type="url" placeholder="  URL da imagem ${i + 1}" >
-                </br>
             </div> `
 
         }
     }
 }
 
-function criarNiveis(numNiveis) {
+function criarNiveis(numNivel) {
+    console.log(numNivel);    
     conteudo.innerHTML = `
     <div class="toda-pag">
         <h2>Agora, decida os níveis</h2>
@@ -168,24 +178,17 @@ function criarNiveis(numNiveis) {
     `
     let containerNiveis = document.querySelector('.container-niveis');
 
-    for (let i = 0; i < numNiveis; i++){
+    for (let i = 0; i < numNivel; i++){
         if (i > 0) {
             containerNiveis.innerHTML += `
             <div class="container-criar-niveis tamanho">
-                <h3>Nível ${i + 1}</h3>
-                <input type="text" minLength="10" placeholder="  Título do nível" >
-                <input type="number" placeholder="  % de acerto mínima">
-                <input type="url" placeholder="  URL da imagem do nível" >
-                <input type="text" minLength="30" placeholder="  Descrição do nível" >
+                <h3>Nível ${i}</h3>
+                <input type="text" minLength="10" placeholder="  Título do nível" required>
+                <input type="number" placeholder="  % de acerto mínima" required>
+                <input type="url" placeholder="  URL da imagem do nível" required>
+                <input type="text" minLength="30" placeholder="  Descrição do nível" required>
             </div>
 
-            <div class="container-pergunta-fechada">
-                <div class="container-pergunta-fechada-bloco">
-                    <h3>Nível ${i + 1}</h3>
-                    <ion-icon name="create-outline" class="conf-ion"></ion-icon>
-                </div>
-            </div>
-        
             <div class="container-pergunta-fechada">
                 <div class="container-pergunta-fechada-bloco">
                     <h3>Nível ${i + 1}</h3>
@@ -195,7 +198,6 @@ function criarNiveis(numNiveis) {
             `
         }
     }
-
 }
 
 
@@ -313,7 +315,7 @@ function exibirQuizzes(resposta) {
     for (let i = 0; i < quizzes.length; i++) {
         mostrarQuizzes.innerHTML += `
             <div class = "exibir-quiz">
-                <div class="estilo-quiz" style:"background-image: url(${quizzes[i].image})";>
+                <div class="estilo-quiz" style="background-image: url(${quizzes[i].image})">
 
                     ${quizzes[i].title}
                 </div>
@@ -322,25 +324,28 @@ function exibirQuizzes(resposta) {
     }
 }
 
+
 let numPerguntas = 0;
 let numNiveis = 0;
 
 function enviarFormCriarQuizz() {
     numPerguntas = document.querySelector('.input-perguntas').value;
+    numNiveis = document.querySelector('.input-niveis').value;
 
     criarPerguntas(numPerguntas);
 }
 
 function enviarFormCriarNiveis() {
-    numNiveis = document.querySelector('.input-niveis').value;
+    
 
-    criarNiveis(numNiveis);
+    quizPronto();
 }
 
 function enviarFormCriarPerguntas() {
-    criarNiveis();
+    console.log(numNiveis)
+    criarNiveis(numNiveis);
 }
 
-function enviarFormCriarNiveis() {
-    quizPronto();
+function esconder(){
+    document.querySelector(".p-fechada").classList.toggle("esconder");
 }
